@@ -13,7 +13,7 @@ mongoose;
 app.use(
   cors({
     optionsSuccessStatu: 200,
-    origin: '*',
+    origin: 'https://inventory-flow.herokuapp.com/',
   })
 );
 app.use(bodyParser.json());
