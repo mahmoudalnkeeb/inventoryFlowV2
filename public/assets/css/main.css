@@ -1,0 +1,250 @@
+/* import  Font Family*/
+/*En font*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/*ar font*/
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
+/* End import  Font Family*/
+.mainNavbar {
+  position: relative;
+  z-index: 1999;
+  height: 80px;
+  background-color: #116530;
+  color: #f6f6f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainNavbar > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mainNavbar > .container .logo {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.mainNavbar > .container .logo > h3 {
+  letter-spacing: 1.8px;
+  color: #E0DDAA;
+  margin-bottom: 0;
+}
+
+.mainNavbar > .container .logo > h3::first-letter {
+  color: red;
+  font-weight: bold;
+}
+
+.mainNavbar > .container .logo > p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: #f6f6f8 !important;
+  text-transform: capitalize;
+}
+
+.mainNavbar > .container .togglerBTN {
+  padding: 0.2rem 0.7rem;
+  background-color: rgba(17, 17, 17, 0.507);
+  border-radius: 5px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .mainNavbar > .container .togglerBTN {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.mainNavbar > .container .togglerBTN:hover {
+  background-color: #000;
+}
+
+.mainNavbar > .container .togglerBTN > :first-child {
+  font-size: 1.8rem;
+}
+
+.mainNavbar > .container .mainLinks {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+@media (max-width: 992px) {
+  .mainNavbar > .container .mainLinks {
+    position: absolute;
+    z-index: 5;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transform: translateY(-300%);
+            transform: translateY(-300%);
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    background-color: #444;
+    -webkit-transition: opacity 0.3s ease-in-out , height 0.4s ease-in-out , -webkit-transform 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out , height 0.4s ease-in-out , -webkit-transform 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out , height 0.4s ease-in-out , transform 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out , height 0.4s ease-in-out , transform 0.5s ease-in-out , -webkit-transform 0.5s ease-in-out;
+  }
+}
+
+.mainNavbar > .container .mainLinks.active {
+  min-height: calc(100vh - 80px);
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.mainNavbar > .container .mainLinks > li:not(:last-child) {
+  position: relative;
+  height: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+.mainNavbar > .container .mainLinks > li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  width: 0;
+  height: 8px;
+  background-color: #f6f6f8;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 50px;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+.mainNavbar > .container .mainLinks > li:not(:last-child):hover::after, .mainNavbar > .container .mainLinks > li:not(:last-child).active::after {
+  width: 98%;
+}
+
+.mainNavbar > .container .mainLinks > li:not(:last-child):hover {
+  background-color: rgba(68, 68, 68, 0.548);
+}
+
+.mainNavbar > .container .mainLinks > li:not(:last-child) > a {
+  display: block;
+  padding: 10px 8px;
+  text-decoration: none;
+  color: #f6f6f8;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.mainNavbar > .container .mainLinks li:last-child {
+  margin-left: 28px;
+}
+
+@media (max-width: 992px) {
+  .mainNavbar > .container .mainLinks li:last-child {
+    margin-top: 25px;
+    margin-left: initial;
+  }
+}
+
+body {
+  -webkit-animation-name: pageLoad;
+          animation-name: pageLoad;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.row_item_sold {
+  position: relative;
+  z-index: 2;
+  color: #252525;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.row_item_sold::after {
+  content: 'sold out';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #202020;
+  font-weight: bold;
+  background-color: #ffd12d5b;
+  width: 100%;
+  height: 100%;
+}
+
+.row_item_sold > :nth-child(10) > :first-child,
+.row_item_sold :nth-child(11) > :first-child {
+  visibility: hidden;
+}
+
+.isFew {
+  color: indianred !important;
+  font-weight: bold !important;
+}
+/*# sourceMappingURL=main.css.map */

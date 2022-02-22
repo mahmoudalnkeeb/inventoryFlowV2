@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/settings.png" type="image/x-icon">
+    <title>نظام ادارة المخازن</title>
+    <!-- Start Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-light bg-gradient">
+    <!-- Start navbar -->
+    <nav class="mainNavbar">
+        <div class="container">
+            <div class="logo">
+                <h3 class="text-uppercase">Inventory flow</h3>
+                <p class="text-muted"> نظام ادارة المخازن</p>
+            </div>
+            <span class="togglerBTN">
+                <i class="bi bi-list"></i>
+            </span>
+            <ul class="mainLinks">
+                <li class="active">
+                    <a href="#">
+                        <i class="bi bi-house px-2 fs-5 lh-sm"></i>
+                        الرئيسية
+                    </a>
+                </li>
+                <li>
+                    <a href="sold-ar">
+                        <i class="bi bi-cart-x px-2 fs-5 lh-sm"></i>
+                        تم بيعه
+                    </a>
+                </li>
+                <li>
+                    <a href="about-us-ar">
+                        <i class="bi bi-book px-2 fs-5 lh-sm"></i>
+                        نبذة عنا</a>
+                </li>
+                <li>
+                    <a href="/">
+                        <button type="button" id="langBTN" class="btn btn-outline-light px-4 rounded fw-bold">EN</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- end navbar -->
+    <main class="MainCrud py-1 px-3">
+        </div>
+        <div class="container ">
+            <form method="POST" class="product_inputs row my-3  pb-4 border border-secondary rounded needs-validation align-item-center justify-content-between" id="mainPriceingForm" novalidate>
+                <div class="row mb-4 p-0 mx-auto">
+                    <div class="col-12 p-0" id="alertBox_Container">
+                    
+                    </div>
+                </div>
+                <div class="col-12 mb-2 mx-auto">
+                    <div class="title input-group">
+                        <span class="input-group-text fw-bold">اسم العنصر</span>
+                        <input class="form-control text-uppercase" type="text" required placeholder="اسم العنصر ..." id="title">
+                        <div class="invalid-feedback">
+                            من فضلك تاكد من ادخال الاسم 
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing row mb-2 mx-auto justify-content-between align-item-center" >
+                    <div class="col-12 mb-2 col-lg-2 ps-0">
+                        <div class="input-group">
+                            <span class="input-group-text fw-bold">السعر</span>
+                            <input class="form-control text-uppercase" type="number" required placeholder=" السعر..." id="price">
+                            <div class="invalid-feedback">
+                                من فضلك تاكد من ادخال السعر
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-2 col-lg-2 pe-0">
+                        <input class="form-control text-uppercase" type="number"  placeholder="الضرائب ..." id="tax">
+                    </div>
+                    <div class="col-12 mb-2 col-lg-2 pe-0">
+                        <input class="form-control text-uppercase" type="number"  placeholder="اعلانات ..." id="ads">
+                    </div>
+                    <div class="col-5 mb-2 col-lg-2 pe-0">
+                        <input class="form-control text-uppercase" type="number" placeholder="خصم ..." id="discount">
+                    </div>
+                    <div class="col-5 mb-2 col-lg-2 pe-0">
+                        <div class="input-group">
+                            <span class="input-group-text fw-bold me-auto ">ج.م</span>
+                            <span class="input-group-text fw-bold " id="innerTotal">0.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="count row mb-2 mx-auto gap-2 align-item-center justify-content-between">
+                    <div class="col-12 col-lg-5">
+                        <div class="input-group">
+                            <span class="input-group-text fw-bold">كمية</span>
+                            <input class="form-control" type="number" placeholder="الكمية المتوفرة من العنصر..." id="count">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="input-group">
+                            <span class="input-group-text fw-bold">فئة العنصر</span>
+                            <input class="form-control" type="text" placeholder="فئة العنصر..." id="Category">
+                        </div>
+                    </div>
+                </div>
+                <div class="search row mt-2 mx-auto justify-content-between gap-1 ">
+                    <div class="col-12 col-lg-5 mb-2">
+                        <span class="input-group-text fw-bold text-uppercase">اجمالي عدد العناصر : <span class="bg-success py-1 px-3 text-light me-2 " id="product_count"></span></span>
+                    </div>
+                    <div class="col-12 col-lg-5 ">
+                        <button class="btn btn-success  bg-gradient shadow rounded w-100 fw-bold" type="submit" id="CreateBtn"><i class="bi bi-plus-square pe-3"></i> اضف عنصر</button>
+                    </div>
+                </div>
+            </form>
+                <div class="outputs row border border-secondary rounded mb-4 p-2 align-item-center gap-2 justify-content-between">
+                    <div class="col-12 col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-text  fw-bold text-uppercase">بحث</span>
+                            <input class="form-control text-capitalize" type="search" placeholder="بحث عن عنصر..." id="searchField">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <select  class="form-select py-3 fw-bold text-uppercase" name="search" id="searchMethod">
+                            <option selected value="name">برجاء اختيار طريقة البحث..</option>
+                            <option value="name">بحث بالاسم</option>
+                            <option value="category">بحث بالفئة</option>
+                            <option value="price">بحث بالسعر</option>
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="innerProductTable row my-4 " style="overflow-x: auto;">
+                    <table class="table table-striped table-hover table-success mt-5">
+                        <thead>
+                            <tr class="text-uppercase">
+                                <th scope="col">#</th>
+                                <th scope="col">أسم اعنصر</th>
+                                <th scope="col">فئة العنصر</th>
+                                <th scope="col">سعر</th>
+                                <th scope="col">ضرائب</th>
+                                <th scope="col">اعلانات</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">اجمالي السعر</th>
+                                <th scope="col">كمية</th>
+                                <th scope="col">تعديل</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myoutputArea">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>لا يوجد بيانات مخزنة بعد.</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </main>
+
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

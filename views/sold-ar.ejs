@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/settings.png" type="image/x-icon">
+    <title>تم بيعه</title>
+        <!-- Start Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Start navbar -->
+    <nav class="mainNavbar">
+        <div class="container">
+            <div class="logo">
+                <h3 class="text-uppercase">Inventory flow</h3>
+                <p class="text-muted"> نظام ادارة المخازن</p>
+            </div>
+            <span class="togglerBTN">
+                <i class="bi bi-list"></i>
+            </span>
+            <ul class="mainLinks">
+                <li >
+                    <a href="ar">
+                        <i class="bi bi-house px-2 fs-5 lh-sm"></i>
+                        الرئيسية
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <i class="bi bi-cart-x px-2 fs-5 lh-sm"></i>
+                        تم بيعه
+                    </a>
+                </li>
+                <li>
+                    <a href="about-us-ar">
+                        <i class="bi bi-book px-2 fs-5 lh-sm"></i>
+                        نبذة عنا
+                    </a>
+                </li>
+                <li>
+                    <a href="sold">
+                        <button type="button" id="langBTN" class="btn btn-outline-light px-4 rounded fw-bold">EN</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End navbar -->
+    <div class="main sold-out">
+
+            <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h4 class="modal-title text-light" id="exampleModalLabel">حذف عنصر</h4>
+                <button type="button" class="btn-close bg-danger m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead text-dark lh-sm">
+                        هل أنت متأكد من إزالة هذا العنصر. يرجى ملاحظة أن لديك تعليقاتك على هذا، فلن تتمكن من التراجع في هذا؟! <br>
+                    </p>
+                    <p class="text-muted">
+                        إذا كنت متأكدا، أدخل اسم المستخدم للمسؤول وكلمة المرور واضغط على "حذف"
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group my-3">
+                                <span class="input-group-text">اسم المستخدم</span>
+                                <input class="form-control" type="text" placeholder="ادخال اسم المستخدم .." id="usernameInputField">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">كلمة المرور</span>
+                                <input class="form-control" type="password" placeholder="ادخال كلمة المرور .." id="passwordInputField">
+                            </div>
+                        </div>
+                        <small class="text-danger" id="ErrorMSG"></small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" onclick="DELETE_PRODUCT()">مسح</button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">تراجع</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container">
+            <div class="row my-3 text-uppercase text-center border border-success">
+                <div class="col">
+                    <label class="fw-bold fs-5 me-4">اجمالي المبيعات :</label>
+                    <label class="fw-bold fs-4" id="totalSales">0.00</label>
+                </div>
+            </div>
+            <div class="row my-4">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">اسم العنصر</th>
+                            <th scope="col">فئة العنصر</th>
+                            <th scope="col">سعر</th>
+                            <th scope="col">ضرائب</th>
+                            <th scope="col">اعلانات</th>
+                            <th scope="col">خصم</th>
+                            <th scope="col">اجمالي السعر</th>
+                            <th scope="col">كمية</th>
+                        </tr>
+                        <tbody id="sold-out_inner-out">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>اسم لكن لا يوجد بيانات بعد .</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script src="assets/js/sold.js"></script>
+</body>
+</html>
