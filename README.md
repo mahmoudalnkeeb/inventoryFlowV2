@@ -4,7 +4,7 @@
 
 - ENDPOINT
 
-    `https://imsapi.onrender.com/products/`
+    `/products`
 
 - METHOD
 
@@ -18,7 +18,7 @@
 
 - ENDPOINT
 
-    `https://imsapi.onrender.com/products/sold`
+    `/products/sold`
 
 - METHOD
 
@@ -33,15 +33,15 @@
 
     in case of search by name
 
-    `https://imsapi.onrender.com/products/search?name=product_name`
+    `/products/search?name=product_name`
 
     in case of search by price
 
-    `https://imsapi.onrender.com/products/search?price=product_price`
+    `/products/search?price=product_price`
 
     in case of search by category
 
-    `https://imsapi.onrender.com/products/search?category=category_name`
+    `/products/search?category=category_name`
 
 - METHOD
 
@@ -55,7 +55,7 @@
 
 - ENDPOINT
 
-    `https://imsapi.onrender.com/products/`
+    `/products/`
 
 - METHOD
 
@@ -83,7 +83,7 @@
 
 - ENDPOINT
 
-    `https://imsapi.onrender.com/products/`
+    `/products/`
 
 - METHOD
 
@@ -111,7 +111,7 @@
 
 - ENDPOINT
 
-    `https://imsapi.onrender.com/products/`
+    `/products/`
 
 - METHOD
 
