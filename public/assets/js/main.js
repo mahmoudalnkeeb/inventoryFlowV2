@@ -23,7 +23,7 @@ const pricingForm = document.querySelector('#mainPriceingForm'),
 
 
 
-let apiurl = '/products';
+let apiurl = 'https://imsapi.onrender.com/products';
 let mode   = false ; // means create
 let productID     ;
 
@@ -66,7 +66,7 @@ CreateBTN.addEventListener('click',async ()=>{
             pricingForm.reset();
             REST_FIELD_PARAMETERS();
             CreateBTN.textContent= 'Create';
-            CreateBTN.className ='btn btn-success  bg-gradient shadow rounded w-100 fw-bold';
+            CreateBTN.className ='btn btn-dark  bg-gradient shadow rounded w-100 fw-bold';
             let updateicon = document.createElement('i');
             updateicon.className = 'bi bi-arrow-clockwise fs-4 me-2'
             CreateBTN.appendChild(updateicon);
@@ -204,7 +204,7 @@ function INNER_DATA_ELEMENTS(api){
             tableRow.className = 'row_item_sold';
         }
 
-        buttonUpdate.className = 'btn btn-dark';
+        buttonUpdate.className = 'btn btn-outline-warning rounded';
         buttonUpdate.setAttribute('data-id',api[i]._id);
         buttonUpdateIcon.className = 'bi bi-pencil-square px-2';
 
@@ -236,7 +236,7 @@ async function CREATE_NEW_DATABASE_ITEM(api){
                 }) })
 
         let data   = await respone.json();
-        ALERT_MSG('bi bi-check2-all',Object.values(data),'success')
+        ALERT_MSG('bi bi-check2-all',Object.values(data),'dark')
         
     }catch(error){
         console.log('error from create function is : '+ error);
@@ -326,7 +326,7 @@ async function UPDATE_DATABASE_DATA(retrivedProductName){
     }
 
     CreateBTN.textContent = 'Update';
-    CreateBTN.className = 'btn btn-outline-success bg-gradient shadow rounded w-100 fw-bold'
+    CreateBTN.className = 'btn btn-outline-dark bg-gradient shadow rounded w-100 fw-bold'
     let updateicon = document.createElement('i');
     updateicon.className = 'bi bi-pen fs-5 px-3'
     CreateBTN.appendChild(updateicon)
@@ -358,7 +358,7 @@ async function FETCH_DATABASE_WITH_UPDATE( ){
         let data = await respone.json();
         
         const recivedMSG = Object.values(data)
-        ALERT_MSG('bi bi-pen fs-5 px-3',`The product is : [ ${recivedMSG}] successfully`,'success')
+        ALERT_MSG('bi bi-pen fs-5 px-3',`The product is : [ ${recivedMSG}] darkfully`,'dark')
 
     } catch (error) {
         console.log('error from fetch updated data : '+ error);
